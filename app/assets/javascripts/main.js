@@ -1,3 +1,11 @@
+function send_mail_popup() {
+  var x = document.getElementById("send_mail");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
 $(document).ready(function(){
 	"use strict";
