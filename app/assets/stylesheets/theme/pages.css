@@ -65,9 +65,9 @@
   line-height: 40px;
   padding: 0 30px;
   border-radius: 20px;
-  background: #f40e67;
+  background: #fab700;
   border: 1px solid #fff;
-  color: #222222;
+  color: #fff;
   display: inline-block;
   font-weight: 500;
   position: relative;
@@ -119,9 +119,10 @@
   opacity: 1;
 }
 
-.primary-btn.hover {
-  color: #fff;
-  border: 1px solid transparent;
+.primary-btn:hover {
+  color: #fab700;
+  /* background-color: transparent; */
+  border-color: #fab700;
 }
 
 .primary-btn.hover:after {
