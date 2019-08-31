@@ -4,7 +4,12 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to example.com, <%= @user[:name] %></h1>
+    <h1>Customer Information</h1>
+    <h3>Name : <%= @user[:name] %></h3>
+    <h3>Car : <%= @user[:car] %></h3>
+    <h3>From : <%= @user[:pickup_location] %> To <%= @user[:drop_location] %></h3>
+    <h3>Email : <%= @user[:email] %></h3>
+    <h3>Contact : <%= @user[:contact] %></h3>
     <p>
       To login to the site, just follow this link: <%= @url %>.
     </p>
