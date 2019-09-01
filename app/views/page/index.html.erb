@@ -14,50 +14,36 @@
   #about {
     height: auto;
   }
-
 </style>
 
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 <head>
-  <!-- Mobile Specific Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Favicon-->
   <link rel="shortcut icon" href="img/fav.png">
-  <!-- Author Meta -->
   <meta name="author" content="codepixer">
-  <!-- Meta Description -->
   <meta name="description" content="">
-  <!-- Meta Keyword -->
   <meta name="keywords" content="">
-  <!-- meta character set -->
   <meta charset="UTF-8">
-  <!-- Site Title -->
   <title>Car Rentals</title>
-
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-    <!--
-    CSS
-    ============================================= -->
-    <link rel="stylesheet" href="css/linearicons.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/main.css">
+  <style type="linearicons.css"></style>
+  <style type="linearicons.css"></style>
+  <style type="font-awesome.min.css"></style>
+  <style type="bootstrap.css"></style>
+  <style type="magnific-popup.css"></style>
+  <style type="nice-select.css"></style>
+  <style type="animate.min.css"></style>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style type="owl.carousel.css"></style>
+  <style type="main.css"></style>
   </head>
   <body>
-
     <header id="header" id="home">
       <div class="container">
         <div class="row align-items-center justify-content-between d-flex">
           <div id="logo">
-            <!-- <a href="/"><img src="logo.png" alt="" title="" /></a> -->
             <a href="/"><%= image_tag("logo.png") %></a>
-            <!-- background: url(asset_path(“intro-bg.jpg”) -->
           </div>
           <nav id="nav-menu-container">
             <ul class="nav-menu">
@@ -67,12 +53,11 @@
               <li><a href="#cars">Cars</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
-          </nav><!-- #nav-menu-container -->
+          </nav>
         </div>
       </div>
-    </header><!-- #header -->
+    </header>
 
-    <!-- start banner Area -->
     <section class="banner-area relative" id="home">
       <div class="overlay overlay-bg"></div>
       <div class="container">
@@ -89,10 +74,10 @@
           </div>
           <div class="col-lg-5  col-md-6 header-right" id="send_mail" style="display:none">
             <h4 class="text-white pb-30">Book Your Car Today!</h4>
-            <form class="form" role="form" autocomplete="off">
+            <%= form_for(:page, url: page_contact_path) do |f| %>
               <div class="form-group">
                 <div class="default-select" id="default-select">
-                  <select>
+                  <select name="car">
                     <option value="" disabled selected hidden>Select Your Car</option>
                     <option value="1">Swift</option>
                     <option value="1">Tavera</option>
@@ -106,7 +91,7 @@
               <div class="form-group row">
                 <div class="col-md-6 wrap-left">
                   <div class="default-select" id="default-select">
-                    <select>
+                    <select name="pickup_location">
                       <option value="" disabled selected hidden>Pickup</option>
                       <option value="1">Pune</option>
                       <option value="1">Mumbai</option>
@@ -127,7 +112,7 @@
               <div class="form-group row">
                 <div class="col-md-6 wrap-left">
                   <div class="default-select" id="default-select">
-                    <select>
+                    <select name="drop_location">
                       <option value="" disabled selected hidden>Drop off</option>
                       <option value="1">Drop off One</option>
                       <option value="1">Drop off Two</option>
@@ -146,23 +131,21 @@
                 </div>
               </div>
               <div class="from-group">
-                <input class="form-control txt-field" type="text" name="name" placeholder="Your name">
-                <input class="form-control txt-field" type="email" name="email" placeholder="Email address">
-                <input class="form-control txt-field" type="tel" name="phone" placeholder="Phone number">
+                <%= f.text_field :name, class: "form-control txt-field", placeholder: "Your Name" %>
+                <%= f.text_field :email, class: "form-control txt-field", placeholder: "Email Address" %>
+                <%= f.text_field :contact, class: "form-control txt-field", placeholder: "Contact Number" %>
               </div>
               <div class="form-group row">
                 <div class="col-md-12">
-                  <button type="reset" class="btn btn-default btn-lg btn-block text-center text-uppercase">Confirm Car Booking</button>
+                  <%= f.submit class: "btn btn-default btn-lg btn-block text-center text-uppercase"%>
                 </div>
               </div>
-            </form>
+            <% end %>
           </div>
         </div>
       </div>
     </section>
-    <!-- End banner Area -->
 
-    <!-- Start feature Area -->
     <section class="feature-area section-gap" id="service">
       <div class="container">
         <div class="row d-flex justify-content-center">
@@ -225,9 +208,7 @@
         </div>
       </div>
     </section>
-    <!-- End feature Area -->
 
-    <!-- Start home-about Area -->
     <section class="home-about-area" id="about">
       <div class="container-fluid">
         <div class="row justify-content-center align-items-center">
@@ -249,9 +230,7 @@
         </div>
       </div>
     </section>
-    <!-- End home-about Area -->
 
-    <!-- Start model Area -->
     <section class="model-area section-gap" id="cars">
       <div class="container">
         <div class="row d-flex justify-content-center pb-40">
@@ -329,10 +308,8 @@
         </div>
       </div>
     </section>
-    <!-- End model Area -->
 
 
-    <!-- Start fact Area -->
     <section class="facts-area section-gap">
       <div class="container">
         <div class="row">
@@ -359,9 +336,7 @@
         </div>
       </div>
     </section>
-    <!-- end fact Area -->
 
-    <!-- Start callaction Area -->
     <section class="callaction-area relative section-gap">
       <div class="overlay overlay-bg"></div>
       <div class="container">
@@ -376,9 +351,7 @@
         </div>
       </div>
     </section>
-    <!-- End callaction Area -->
 
-    <!-- Start blog Area -->
     <section class="blog-area section-gap" id="blog">
       <div class="container">
         <div class="row d-flex justify-content-center">
@@ -453,10 +426,7 @@
         </div>
       </div>
     </section>
-    <!-- End blog Area -->
 
-
-    <!-- start footer Area -->
     <footer class="footer-area section-gap">
       <div class="container">
         <div class="row">
@@ -523,32 +493,10 @@
             </div>
           </div>
           <p class="mt-50 mx-auto footer-text col-lg-12">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
         </div>
       </div>
     </footer>
-    <!-- End footer Area -->
-
-    <script src="js/vendor/jquery-2.2.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="js/easing.min.js"></script>
-    <script src="js/hoverIntent.js"></script>
-    <script src="js/superfish.min.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/parallax.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/main.js"></script>
   </body>
-  </html>
+</html>
