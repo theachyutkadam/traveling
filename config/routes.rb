@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'page_cars', :to => 'page#cars'
   get 'page_service', :to => 'page#service'
   get 'page_team', :to => 'page#team'
-  get 'page_contact', :to => 'page#contact'
+  post 'page_contact', :to => 'page#contact'
   get 'page_elements', :to => 'page#elements'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
