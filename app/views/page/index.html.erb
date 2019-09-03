@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
   html {
     scroll-behavior: smooth;
   }
@@ -14,7 +14,7 @@
   #about {
     height: auto;
   }
-</style>
+</style> -->
 
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
@@ -48,11 +48,11 @@
           </div>
           <nav id="nav-menu-container">
             <ul class="nav-menu">
-              <li class="menu-active"><a href="#home">Home</a></li>
-              <li><a href="#service">Service</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#cars">Cars</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li class="menu-active"><a>Home</a></li>
+              <li><a>Service</a></li>
+              <li><a>About</a></li>
+              <li><a>Cars</a></li>
+              <li><a>Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -71,9 +71,9 @@
             <p class="pt-20 pb-20 text-white">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <a class="primary-btn text-uppercase" onclick="send_mail_popup()">Rent Car Now</a>
+            <a class="primary-btn text-uppercase">Rent Car Now</a>
           </div>
-          <div class="col-lg-5  col-md-6 header-right" id="send_mail" style="display:none">
+          <div class="col-lg-5  col-md-6 header-right" id="send_mail">
             <h4 class="text-white pb-30">Book Your Car Today!</h4>
             <%= form_for(:page, url: page_contact_path) do |f| %>
               <div class="form-group">
@@ -102,16 +102,6 @@
                   </div>
                 </div>
                 <div class="col-md-6 wrap-right">
-                  <div class="input-group dates-wrap">
-                    <input id="datepicker" class="dates form-control" id="exampleAmount" placeholder="Date & time" type="text">
-                    <div class="input-group-prepend">
-                      <span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-md-6 wrap-left">
                   <div class="default-select" id="default-select">
                     <select name="drop_location">
                       <option value="" disabled selected hidden>Drop off</option>
@@ -122,16 +112,9 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6 wrap-right">
-                  <div class="input-group dates-wrap">
-                    <input id="datepicker2" class="dates form-control" id="exampleAmount" placeholder="Date & time" type="text">
-                    <div class="input-group-prepend">
-                      <span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
-                    </div>
-                  </div>
-                </div>
               </div>
               <div class="from-group">
+                <%= f.text_field :message, class: "form-control txt-field", placeholder: "Message Here Max(100) Words" %>
                 <%= f.text_field :name, class: "form-control txt-field", placeholder: "Your Name" %>
                 <%= f.text_field :email, class: "form-control txt-field", placeholder: "Email Address" %>
                 <%= f.text_field :contact, class: "form-control txt-field", placeholder: "Contact Number" %>
@@ -259,7 +242,7 @@
                 Air Condition    : Dual Zone <br>
                 Transmission     : Automatic
               </p>
-              <a class="text-uppercase primary-btn" onclick="send_mail_popup()" href="#home">Book This Car Now</a>
+              <a class="text-uppercase primary-btn">Book This Car Now</a>
             </div>
             <div class="col-lg-6 model-right">
               <a href=""><%= image_tag("wp3119966-innova-wallpapers.jpg") %></a>
@@ -431,63 +414,6 @@
     </section>
     <!-- End blog Area -->
 
-    <!-- Start contact-page Area -->
-    <section class="contact-page-area section-gap" id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 d-flex flex-column address-wrap">
-            <div class="single-contact-address d-flex flex-row">
-              <div class="icon">
-                <span class="lnr lnr-home"></span>
-              </div>
-              <div class="contact-details">
-                <h5>Vishal, Pune</h5>
-                <p>Pune, Maharashtra</p>
-              </div>
-            </div>
-            <div class="single-contact-address d-flex flex-row">
-              <div class="icon">
-                <span class="lnr lnr-phone-handset"></span>
-              </div>
-              <div class="contact-details">
-                <h5>+91 848 580 7059</h5>
-                <p>Mon to Fri 9am to 6 pm</p>
-              </div>
-            </div>
-            <div class="single-contact-address d-flex flex-row">
-              <div class="icon">
-                <span class="lnr lnr-envelope"></span>
-              </div>
-              <div class="contact-details">
-                <h5>nandkishor.joshi@definelabs.in</h5>
-                <p>Send us your query anytime!</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <form class="form-area " id="myForm" action="mail.php" method="post" class="contact-form text-right">
-              <div class="row">
-                <div class="col-lg-6 form-group">
-                  <input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
-
-                  <input name="email" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
-
-                  <input name="subject" placeholder="Enter your subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your subject'" class="common-input mb-20 form-control" required="" type="text">
-                  <div class="mt-20 alert-msg" style="text-align: left;"></div>
-                </div>
-                <div class="col-lg-6 form-group">
-                  <textarea class="common-textarea form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-                  <button class="primary-btn mt-20 text-white" style="float: right;">Send Message</button>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="map-wrap" style="width:100%; height: 445px;" id="map"></div>
-        </div>
-      </div>
-    </section>
-    <!-- End contact-page Area -->
-
     <footer class="footer-area section-gap">
       <div class="container">
         <div class="row">
@@ -528,28 +454,23 @@
             <div class="single-footer-widget">
               <h6>Follow Us</h6>
               <p>Let us be social</p>
+              <p>vishal@gmail.com</p>
               <div class="footer-social d-flex align-items-center">
-                <a href="#home"><i class="fa fa-facebook"></i></a>
-                <a href="#home"><i class="fa fa-twitter"></i></a>
-                <a href="#home"><i class="fa fa-dribbble"></i></a>
-                <a href="#home"><i class="fa fa-behance"></i></a>
+                <a><i class="fa fa-facebook"></i></a>
+                <a><i class="fa fa-twitter"></i></a>
+                <a><i class="fa fa-dribbble"></i></a>
+                <a><i class="fa fa-behance"></i></a>
               </div>
             </div>
           </div>
           <div class="col-lg-4  col-md-6 col-sm-6">
             <div class="single-footer-widget">
-              <h6>Newsletter</h6>
-              <p>Stay update with our latest</p>
-              <div class="" id="mc_embed_signup">
-                <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-                  <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-                  <button class="click-btn btn btn-default"><span class="lnr lnr-arrow-right"></span></button>
-                  <div style="position: absolute; left: -5000px;">
-                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                  </div>
-
-                  <div class="info"></div>
-                </form>
+              <div class="contact-details">
+                <h6>Vishal, Pune</h6>
+                <p>Pune, Maharashtra</p>
+                <p>+91 848 580 7059</p>
+                <p>Mon to Fri 9am to 6 pm</p>
+                <p>Send us your query anytime!</p>
               </div>
             </div>
           </div>
